@@ -16,11 +16,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import com.micoach.domain.Person;
 
 
 @Controller
-@RequestMapping("micoach")
+@RequestMapping("/micoach")
 public class PersonControllers {
 
 
@@ -47,5 +48,9 @@ public class PersonControllers {
 		return "visita";
 	}
 	
-	  
+	@RequestMapping(value="/users", method = RequestMethod.GET)
+    public String getIndexPage() {
+	   System.out.println("Hola mundo");
+        return "angularJS";
+    }  
 }
